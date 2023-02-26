@@ -11,7 +11,6 @@ import java.util.Random;
 
 public class Game extends JPanel implements Runnable, KeyListener, ActionListener {
 
-
     private static final int WIDTH_OF_FRAME = 566;
     private static final int HEIGHT_OF_FRAME = 466;
     private static final int HEIGHT_OF_BOTTOM_BAR = 20;
@@ -70,8 +69,6 @@ public class Game extends JPanel implements Runnable, KeyListener, ActionListene
         this.setPreferredSize(new Dimension(WIDTH_OF_FRAME, HEIGHT_OF_FRAME));
         this.addKeyListener(this);
     }
-
-    public static void main(String[] args) { new MyFrame(); }
 
     @Override
     public void addNotify() {
@@ -176,35 +173,6 @@ public class Game extends JPanel implements Runnable, KeyListener, ActionListene
                 Position pointPosition = positions[i][j];
                 if(pointPosition.bounds.intersects(ballPosition.bounds) && !pointHitted[i][j]) {
 
-//                    boolean collisionLeft =  ballPosition.getX() + ball.getWidth() >= pointPosition.getX() &&
-//                                             ballPosition.getY() < pointPosition.getY() + point.getHeight() &&
-//                                             ballPosition.getY() > pointPosition.getY();
-//                    boolean collisionRight = ballPosition.getX() <= pointPosition.getX() + point.getWidth() &&
-//                                             ballPosition.getY() < pointPosition.getY() + point.getHeight() &&
-//                                             ballPosition.getY() > pointPosition.getY();
-//                    boolean collisionDown =  ballPosition.getY() < pointPosition.getY() + point.getHeight() &&
-//                                             ballPosition.getX() + ball.getWidth() > pointPosition.getX() &&
-//                                             ballPosition.getX() < pointPosition.getX() + point.getWidth();
-//                    boolean collisionUp =    ballPosition.getY() + ball.getHeight() > pointPosition.getY() &&
-//                                             ballPosition.getX() + ball.getWidth() > pointPosition.getX() &&
-//                                             ballPosition.getX() < pointPosition.getX() + point.getWidth();
-//                    if(collisionLeft) {
-//                        pointPosition.setPosition(-100, 0);
-//                        pointsCounter++;
-//                        this.changeBallDirectionX();
-//                    } else if(collisionRight) {
-//                        pointPosition.setPosition(-100, 0);
-//                        pointsCounter++;
-//                        this.changeBallDirectionX();
-//                    } else if(collisionDown) {
-//                        pointPosition.setPosition(-100, 0);
-//                        pointsCounter++;
-//                        this.changeBallDirectionY();
-//                    } else if(collisionUp) {
-//                        pointPosition.setPosition(-100, 0);
-//                        pointsCounter++;
-//                        this.changeBallDirectionY();
-//                    }
                     if(ballPosition.getX() <= pointPosition.getX() && ballPosition.getY() >= pointPosition.getY() + point.getHeight()/2) {
                         if(absoluteValue(ballPosition.getX() + ball.getWidth(), pointPosition.getX()) <
                                 absoluteValue(ballPosition.getY(), pointPosition.getY() + point.getHeight())) {
